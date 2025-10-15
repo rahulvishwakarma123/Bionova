@@ -1,5 +1,5 @@
 import React from "react";
-import Banner from "../Components/banner";
+import Banner from "../Components/Banner";
 
 const FeaturedBrands = () => {
   const brands = [
@@ -21,7 +21,7 @@ const FeaturedBrands = () => {
   const repeatedBrands = [...brands, ...brands]; // duplicate for infinite loop
 
   return (
-    <div className="w-full pt-10 flex flex-col items-center bg-white overflow-hidden">
+    <div className="flex w-full flex-col items-center overflow-hidden bg-white pt-10">
       <style>{`
         @keyframes marquee {
           0% { transform: translateX(0%); }
@@ -40,16 +40,16 @@ const FeaturedBrands = () => {
         }
       `}</style>
 
-      <h1 className="text-2xl md:text-3xl font-semibold mb-8 text-gray-800">
+      <h1 className="mb-8 text-2xl font-semibold text-gray-800 md:text-3xl">
         Featured Brands
       </h1>
 
-      <div className="w-full overflow-hidden relative">
-        <div className="flex animate-marquee whitespace-nowrap">
+      <div className="relative w-full overflow-hidden">
+        <div className="animate-marquee flex whitespace-nowrap">
           {repeatedBrands.map((src, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-32 sm:w-40 md:w-48 lg:w-56 h-24 sm:h-28 md:h-32 lg:h-36 mx-3 sm:mx-4 bg-white border border-gray-200 rounded-lg shadow-sm flex items-center justify-center"
+              className="mx-3 flex h-24 w-32 flex-shrink-0 items-center justify-center rounded-lg border border-gray-200 bg-white shadow-sm sm:mx-4 sm:h-28 sm:w-40 md:h-32 md:w-48 lg:h-36 lg:w-56"
             >
               <img
                 src={src}
@@ -60,7 +60,7 @@ const FeaturedBrands = () => {
           ))}
         </div>
       </div>
-      <Banner/>
+      <Banner />
     </div>
   );
 };
